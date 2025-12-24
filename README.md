@@ -6,7 +6,8 @@
 
 ---
 
-## 🏗️ 1. 주요 페이지 구성
+<details>
+<summary><b>🏗️ 1. 주요 페이지 구성 (클릭하여 펼치기)</b></summary>
 
 | 페이지 | 핵심 기능 | 비고 |
 | :--- | :--- | :--- |
@@ -15,10 +16,10 @@
 | [Market] 세일 리포트 | 게임 세일 캘린더, 역대 최저가 비교, 가성비(Price/Perf) 분석 | 스마트 소비 가이드 |
 | [Visualizer] 현실 대조 | 휴대폰 모델 대비 본체/모니터 크기 애니메이션, 데스크 시뮬레이션 | 2D/3D 실측 비율 배치 |
 | [Lab] 신체 피팅 | 웹캠 기반 손 크기 측정(DL), 마우스/기기 가상 그립 피팅 | 개인화된 주변기기 추천 |
+</details>
 
----
-
-## 🛠️ 2. 기술 스택 및 역할
+<details>
+<summary><b>🛠️ 2. 기술 스택 및 역할</b></summary>
 
 ### 🧠 AI & Data Science
 * ML (Machine Learning): 부품 성능(FPS) 예측, 시계열 데이터 기반 가격 추이 분석, 병목 현상 스코어링.
@@ -27,23 +28,20 @@
 
 ### 🎨 Graphics & Rendering
 * Rendering: WebGL(Three.js) 또는 Canvas API를 활용한 실측 규격 기반의 공간 시뮬레이션 구현.
+</details>
 
----
+<details>
+<summary><b>🗄️ 3. 상세 DB 설계 (ERD)</b></summary>
 
-## 🔄 3. 사용자 흐름 (UX Flow)
-1. Market: 실시간 게임 세일 및 부품 핫딜 확인.
-2. Estimator: 목표 게임 사양에 따른 ML 기반 최적 견적 생성.
-3. Analysis: 가격 추이 데이터를 통한 구매 적기 판단.
-4. Visualizer: 실제 책상 규격에 부품 배치 및 공간 점유율 시뮬레이션.
-5. Lab: 신체 측정 데이터를 활용한 최종 주변기기(마우스/폰) 피팅.
+### 게임 & 사양 테이블
+- Games / Game_Requirements / Game_Sales
 
----
+### 하드웨어 핵심 테이블
+- CPUs / GPUs (규격 데이터 포함) / Cases (수용 능력 포함) / Monitors
 
-## 📊 4. Dataset 계획
-* 성능/가격: Danawa(시세), PassMark/3DMark(벤치마크), UserBenchmark.
-* 물리 규격: TechPowerUp(VGA), GSMArena(Smartphone), DisplaySpecifications(Monitor).
-* 공간 데이터: PC 케이스/키보드 실측 사이즈 제조사 DB 및 사용자 입력 책상 데이터.
-* 게임 데이터: Steam Web API, SteamSpy, CheapShark API, SteamDB.
+### 주변기기 및 가격 추적
+- Mice & Keyboards / Price_History (ML 학습용)
+</details>
 
 ---
 
