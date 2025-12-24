@@ -1,1 +1,2 @@
-# Virtual-Build-PC
+🖥️ Virtual Build PC
+"숫자로만 보던 스펙을 현실의 감각으로, 데이터 기반 지능형 하드웨어 빌드 플랫폼"
