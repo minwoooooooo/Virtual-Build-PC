@@ -1,53 +1,46 @@
-# 🖥️ Virtual Build PC
-> 데이터 기반 지능형 하드웨어 빌드 플랫폼
+# 다나와 크롤러
 
-## 📌 Project Overview
-단순한 부품 나열식 견적 서비스를 넘어, ML/DL/LLM 기술을 결합하여 성능을 예측하고 사용자의 실제 물리적 환경(책상, 신체)과 부품 규격을 동기화하는 실감형 하드웨어 셋업 솔루션입니다.
+각종 PC부품들의 가격의 변동을 알아보기 위해서 제작했습니다
 
----
+크롤링은 GitHub의 Actions를 사용하여 매일 UTP 0시(한국시간으로 9:00 AM)에 실행되도록 설정하였습니다
 
-<details>
-<summary><b>🏗️ 1. 주요 페이지 구성 (클릭하여 펼치기)</b></summary>
+Actions의 큐 대기시간이 존재해 보통 10시 5~15분에 완료됩니다
 
-| 페이지 | 핵심 기능 | 비고 |
-| :--- | :--- | :--- |
-| [Home] 마켓 보드 | 실시간 하드웨어 & 게임 핫딜 크롤링, 가격 변동 알림 | 데이터 기반 시장 모니터링 |
-| [Estimator] AI 견적 | 게임별 옵션 예측(ML), 6개월 가격 추이 그래프, 호환성 체크 | 성능 및 구매 시점 최적화 |
-| [Market] 세일 리포트 | 게임 세일 캘린더, 역대 최저가 비교, 가성비(Price/Perf) 분석 | 스마트 소비 가이드 |
-| [Visualizer] 현실 대조 | 휴대폰 모델 대비 본체/모니터 크기 애니메이션, 데스크 시뮬레이션 | 2D/3D 실측 비율 배치 |
-| [Lab] 신체 피팅 | 웹캠 기반 손 크기 측정(DL), 마우스/기기 가상 그립 피팅 | 개인화된 주변기기 추천 |
-</details>
 
-<details>
-<summary><b>🛠️ 2. 기술 스택 및 역할</b></summary>
+## [크롤링 데이터](https://github.com/sammy310/Danawa_Crawler/tree/master/crawl_data)
+- [CPU](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=CPU) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/CPU.csv)
+- [그래픽카드](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=VGA) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/VGA.csv)
 
-### 🧠 AI & Data Science
-* ML (Machine Learning): 부품 성능(FPS) 예측, 시계열 데이터 기반 가격 추이 분석, 병목 현상 스코어링.
-* DL (Deep Learning): MediaPipe 활용 핸드 랜드마크 추출 및 실측, 객체 인식(Object Detection)을 통한 부품 자동 인식.
-* LLM (Large Language Model): RAG(Retrieval-Augmented Generation) 기반 하드웨어 상담 및 오류 진단 가이드.
+- [마더보드](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=MBoard) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/MBoard.csv)
+- [램](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=RAM) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/RAM.csv)
 
-### 🎨 Graphics & Rendering
-* Rendering: WebGL(Three.js) 또는 Canvas API를 활용한 실측 규격 기반의 공간 시뮬레이션 구현.
-</details>
+- [SSD](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=SSD) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/SSD.csv)
+- [HDD](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=HDD) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/HDD.csv)
 
-<details>
-<summary><b>🗄️ 3. 상세 DB 설계 (ERD)</b></summary>
+- [쿨러](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=Cooler) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/Cooler.csv)
+- [케이스](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=Case) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/Case.csv)
+- [파워](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=Power) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/Power.csv)
 
-### 게임 & 사양 테이블
-- Games / Game_Requirements / Game_Sales
+- [모니터](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=Monitor) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/Monitor.csv)
 
-### 하드웨어 핵심 테이블
-- CPUs / GPUs (규격 데이터 포함) / Cases (수용 능력 포함) / Monitors
+- [스피커](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=Speaker) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/Speaker.csv)
+- [헤드폰](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=Headphone) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/Headphone.csv)
+- [이어폰](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=Earphone) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/Earphone.csv)
+- [헤드셋](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=Headset) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/Headset.csv)
 
-### 주변기기 및 가격 추적
-- Mice & Keyboards / Price_History (ML 학습용)
-</details>
+- [키보드](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=Keyboard) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/Keyboard.csv)
+- [마우스](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=Mouse) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/Mouse.csv)
+
+- [노트북](https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?category=Laptop) / [(데이터 파일)](https://github.com/sammy310/Danawa_Crawler/blob/master/crawl_data/Laptop.csv)
+
 
 ---
 
-## 📅 1주차 진행 상황 (Current Status)
-### ✅ 하드웨어 마스터 데이터베이스 구축 및 데이터 엔지니어링
-- [ ] Data Scraping: Python(Selenium/BeautifulSoup) 기반 다나와 카테고리별 스펙 크롤러 개발.
-- [ ] Data Cleaning: 텍스트 형태의 상세 사양에서 정규표현식을 활용한 실측 mm 데이터 추출.
-- [ ] Performance Mapping: 부품명 기준 해외 벤치마크 점수와 국내 시세 데이터 결합.
-- [ ] Price Tracking: 시계열 분석을 위한 일일 부품 시세 수집 파이프라인 구축.
+### 제작에 사용된 것들
+
+- Python : 3.7
+- Scrapy : 2.5.1
+- selenium : 3.141.0
+- PyGithub : 1.51
+- pytz : 2020.1
+- Chromedriver : 2.40 (linux 64)
