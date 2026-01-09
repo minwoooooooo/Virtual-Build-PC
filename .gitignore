@@ -8,19 +8,24 @@ __pycache__/
 venv/
 .venv/
 
-# 3. 대용량 모델 파일 (필요 시 LFS 사용 권장)
-*.h5
+# 3. Dataset 폴더 관리 (구조는 유지하되 데이터는 제외)
+# Dataset 폴더 내의 모든 실시간 생성 데이터(.csv)를 기본적으로 제외합니다.
+Dataset/price_history/*
+Dataset/specs/*
 
-# 4. 데이터셋 폴더 관리 (VGA_Total과 mouse_specs.csv만 포함)
-# 먼저 Dataset 폴더 내의 모든 것을 제외합니다.
-Dataset/*
-
-# Dataset 폴더 자체는 추적해야 하므로 예외로 둡니다.
+# 폴더 구조 자체를 깃허브에 남기기 위해 폴더는 예외 처리합니다.
 !Dataset/
+!Dataset/price_history/
+!Dataset/specs/
 
-# mouse_specs.csv 파일은 포함
+# --- [특별 예외 설정: 유지하고 싶은 파일들] ---
+# 1. 마우스 스펙 파일 (기존 유지)
 !Dataset/mouse_specs.csv
 
-# VGA_Total 폴더와 그 내부의 모든 파일은 포함
+# 2. VGA_Total 폴더와 그 내부 파일들 (기존 유지)
 !Dataset/VGA_Total/
 !Dataset/VGA_Total/**
+
+# 4. 크롤링 시 발생하는 임시 파일 방지
+Crawlers/*.csv
+*.csv_Temp.csv
